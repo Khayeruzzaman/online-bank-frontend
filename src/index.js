@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import HomeController from './Components/Controller/controller';
+
+var token = null;
+if(localStorage.getItem('userkey')){
+  var obj = JSON.parse(localStorage.getItem('userkey'));
+  token = obj.access_token;
+}
+axios.defaults.baseURL="http://127.0.0.1:8000/api/";
+axios.defaults.headers.common['Authorization']=token;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HomeController />
   </React.StrictMode>,
   document.getElementById('root')
 );
