@@ -1,0 +1,89 @@
+.bodydivA {
+    height: 100%;
+    background: url("http://127.0.0.1:8000/sysimages/bank_about.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.flexContainerBackgroundA {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    overflow: auto;
+    width: auto;
+}
+
+.flexContainerHeadingA {
+    display: -webkit-flex;
+    display: flex;
+    width: auto;
+    height: auto;
+    background: linear-gradient(rgba(15, 83, 92, 0.6), rgba(0, 0, 0, 0));
+}
+
+.flexContainerA {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 9px;
+    background: rgba(0, 49, 51, 0.712);
+    border: 2px solid #f1f1f1;
+}
+
+.flexItemA {
+    width: 500px;
+    height: 200px;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 500px) {
+    .flexItemA {
+        width: auto;
+        height: auto;
+    }
+}
+
+h1[id="contact"] {
+    line-height: normal;
+    font-family: Roboto-Thin;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+
+h1[id="sub-contact"] {
+    margin-top: 0px;
+    margin-left: 10px;
+    font-size: 30px;
+    font-family: Roboto-Regular;
+    color: white;
+    line-height: normal;
+}
+
+p[id="sub-contact"] {
+    margin-top: -10px;
+    margin-left: 10px;
+    font-size: 24px;
+    font-family: Roboto-Regular;
+    color: white;
+    line-height: normal;
+}
+
+@media screen and (max-width: 1000px) {
+    h1[id="sub-contact"] {
+        text-align: center;
+    }
+
+    p[id="sub-contact"] {
+        text-align: center;
+    }
+}
