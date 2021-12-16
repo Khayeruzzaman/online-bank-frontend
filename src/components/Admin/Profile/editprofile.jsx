@@ -6,7 +6,9 @@ import React,{useState} from "react";
 import SideBar from "../Navbar/sidebar";
 
 
-const EditProfile = () =>{
+const EditProfile = (props) =>{
+
+    
 
     const [errorList,setError]= useState([]); 
     const [fname,setFname]= useState();
@@ -21,7 +23,7 @@ const EditProfile = () =>{
     const [password,setPassword]= useState();
     const [sal,setSal]= useState();
 
-    const handleSubmit = async (e) => {
+    const handleUpdate = async (e) => {
         e.preventDefault();
         
         
@@ -39,8 +41,9 @@ const EditProfile = () =>{
                 data.append('password', password);
                 data.append('sal', sal);
                 
+                
 
-                const res = await axios.post('http://localhost:8000/api/admin/create/admin/users',data);
+                const res = await axios.post('admin/create/admin/users',data);
                 if(res.data.status === 200){
                     
                     alert(res.data.message);
@@ -73,8 +76,7 @@ const EditProfile = () =>{
                 
 
                     <form>
-                        <legend>Admin Registration</legend>
-                        <br/>
+                        
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>First Name</label>
                             <input type='text' name='fname' onChange={(e)=>setFname(e.target.value)} value={fname} className='form-control' />
@@ -155,7 +157,7 @@ const EditProfile = () =>{
                         <span style={{color:'red'}}>{errorList.sal}</span>
                         <br/>
 
-                        <input className= "btn1" type="Submit" onClick={handleSubmit} name="submit"></input>
+                        <input className= "btn1" type="Submit" onClick={handleUpdate} name="update"></input>
 
                     </form>
                 

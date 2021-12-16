@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "../Navbar/sidebar";
 
-const News = () =>{
+const NewsCreate = () =>{
 
     return(
         <div>
@@ -52,4 +52,4 @@ const News = () =>{
 }
 
 
-export default News;
+export default NewsCreate;

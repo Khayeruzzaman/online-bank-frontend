@@ -8,7 +8,7 @@ const AcceptRequest = () => {
     const [setAccept] = useState([]);
     const  {account_id} = useParams();
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/admin/loan/requests/accept/"+account_id)
+        axios.get("admin/loan/requests/accept/"+account_id)
         .then(resp=>{
             setAccept(resp.data);
         }).catch(err=>{

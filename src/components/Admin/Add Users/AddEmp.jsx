@@ -47,7 +47,7 @@ const EmpAdd = () =>{
                 data.append('doc', doc);
                 
 
-                const res = await axios.post('http://localhost:8000/api/admin/create/employee/users',data);
+                const res = await axios.post('admin/create/employee/users',data);
                 if(res.data.status === 200){
                     
                     alert(res.data.message);

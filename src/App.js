@@ -1,19 +1,19 @@
 
-import Dashboard from './components/Admin/Dashboard/dashboard';
+import Dashboard from './Components/Admin/Dashboard/dashboard';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import ViewPro from './components/Admin/Profile/viewProfile';
-import AdminList from './components/Admin/List/adminLists.jsx';
-import Home from './components/Admin/Home';
-import EmpList from './components/Admin/List/empLists.jsx';
-import AccountList from './components/Admin/List/accountList.jsx';
-import AccountRequest from './components/Admin/Requests/accountReq';
-import LoanRequest from './components/Admin/Requests/loanReq';
-import AdminAdd from './components/Admin/Add Users/AddAdmin';
-import EmpAdd from './components/Admin/Add Users/AddEmp';
-import News from './components/Admin/News/news';
-import HistoryList from './components/Admin/History/historyList';
-import EditProfile from './components/Admin/Profile/editprofile';
+import ViewPro from './Components/Admin/Profile/viewProfile';
+import AdminList from './Components/Admin/List/adminLists.jsx';
+import Home from './Components/Admin/Home';
+import EmpList from './Components/Admin/List/empLists.jsx';
+import AccountList from './Components/Admin/List/accountList.jsx';
+import AccountRequest from './Components/Admin/Requests/accountReq';
+import LoanRequest from './Components/Admin/Requests/loanReq';
+import AdminAdd from './Components/Admin/Add Users/AddAdmin';
+import EmpAdd from './Components/Admin/Add Users/AddEmp';
+import News from './Components/Admin/News/news';
+import HistoryList from './Components/Admin/History/historyList';
+import EditProfile from './Components/Admin/Profile/editprofile';
 
 function App() {
   return (

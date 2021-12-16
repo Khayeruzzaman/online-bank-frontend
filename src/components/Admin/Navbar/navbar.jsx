@@ -5,7 +5,8 @@ import React from "react";
 const Navbar = () =>{
 
     return(
-        <div style={{backgroundImage: 'assets/image/background_images/back1.png'}}>
+        
+        <div >
 
             
             <link href="/assets/admin/css/navbar.css" rel="stylesheet" type="text/css" />
@@ -17,7 +18,7 @@ const Navbar = () =>{
                     <ul className="nav justify-content-end" id="navA">
 
                     <li className="nav-item">
-                        <a className="nav-link"  href=" ">Admin Name</a>
+                        <a className="nav-link"  href=" ">{localStorage.getItem('AdminName')}</a>
                     </li>
 
                     <li className="nav-item">

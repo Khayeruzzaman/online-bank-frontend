@@ -8,7 +8,7 @@ const AccountList = () =>{
 
     const [acc, setAcc] = useState([]);
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/admin/dashboard/customerList")
+        axios.get("admin/dashboard/customerList")
         .then(resp=>{
             setAcc(resp.data);
         }).catch(err=>{

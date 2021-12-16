@@ -40,7 +40,7 @@ const AdminAdd = () =>{
                 data.append('sal', sal);
                 
 
-                const res = await axios.post('http://localhost:8000/api/admin/create/admin/users',data);
+                const res = await axios.post('admin/create/admin/users',data);
                 if(res.data.status === 200){
                     
                     alert(res.data.message);
@@ -59,9 +59,12 @@ const AdminAdd = () =>{
                 }
 
                 else if(res.data.status === 422){
-
+                    
                     setError(res.data.errors)
+                    
                 }
+
+                console.log(res.data.errors);
            
     }
    

@@ -8,7 +8,7 @@ const AdminList = () =>{
 
     const [admin, setAdmin] = useState([]);
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/admin/dashboard/adminList")
+        axios.get("admin/dashboard/adminList")
         .then(resp=>{
             setAdmin(resp.data);
         }).catch(err=>{

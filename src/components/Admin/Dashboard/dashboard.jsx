@@ -6,11 +6,10 @@ import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
 
-    
 
     const [data, setData] = useState([['0'],['1'],['2']]);
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/admin/dashboard")
+        axios.get("admin/dashboard")
         .then(resp=>{
             setData(resp.data);
         }).catch(err=>{
@@ -24,7 +23,7 @@ const Dashboard = () => {
 
     return (
         
-<div>
+<div >
     
     <SideBar />
     

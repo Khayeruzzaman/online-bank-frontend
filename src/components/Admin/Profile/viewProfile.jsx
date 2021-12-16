@@ -10,7 +10,7 @@ const ViewPro = () => {
     const [bank, setBank] = useState([]);
 
     useEffect(()=>{
-        axios.get( 'http://127.0.0.1:8000/api/admin/viewprofile').then(response=>{
+        axios.get( 'admin/viewprofile').then(response=>{
             if(response.data.status === 200){
                 setAdmin(response.data.admin);
                 setBank(response.data.bank);

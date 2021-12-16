@@ -31,7 +31,7 @@ const News = () => {
                             <p id="date">{{ $n->updated_at }}</p>
                         </div>
                         <div className="flex-container-body">
-                            <img src="/newsimg/{{ $n->newspicture }}" id="news_body_img">
+                            <img src="/newsimg/{{ $n->newspicture }}" id="news_body_img" alt= "">
                         </div>
                         <div className="flex-container-body">
                             <p id="news_body">{{ $n->newsbody }}</p>

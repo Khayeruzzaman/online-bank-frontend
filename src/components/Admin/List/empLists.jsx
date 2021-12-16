@@ -8,7 +8,7 @@ const EmpList = () =>{
 
     const [emp, setEmp] = useState([]);
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/admin/dashboard/employeeList")
+        axios.get("admin/dashboard/employeeList")
         .then(resp=>{
             setEmp(resp.data);
         }).catch(err=>{

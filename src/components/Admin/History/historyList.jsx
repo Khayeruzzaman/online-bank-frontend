@@ -8,7 +8,7 @@ const HistoryList = () =>{
 
     const [his, setHis] = useState([]);
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/admin/history")
+        axios.get("admin/history")
         .then(resp=>{
             setHis(resp.data);
         }).catch(err=>{
