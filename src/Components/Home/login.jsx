@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import styles from './login.module.css';
+import { useHistory } from "react-router-dom";
+
 
 const Login = () => {
 
     const[username, setUsername] = useState("");
     const[password, setPassword] = useState("");
     const[errmsg, setErrmsg] = useState([]);
+    const history = useHistory()
 
     useEffect(() => {
         document.title = "Login/SignUp"
@@ -35,8 +38,12 @@ const Login = () => {
             else if(response.data.customer){
                 swal(response.data.customer.userkey);
             }
-            else if(response.data.admin){
-                swal(response.data.admin.userkey);
+            else if(response.data.adminToken){
+                //swal(response.data.adminToken.userkey);
+                localStorage.setItem('AdminId',response.data.adminData.id)
+                localStorage.setItem('AdminName',response.data.adminData.adminname)
+                localStorage.setItem('AdminToken',response.data)
+                history.push("/admin/dashboard");
             }
         }
     }
@@ -51,19 +58,19 @@ const Login = () => {
                 </center>
                 <br />
                     <input type="text" name="username" onChange={(event)=>setUsername(event.target.value)} placeholder="Enter your Username" value={username} />
-                    <span class="text text-danger" id="validation_msg">{errmsg.username}</span>
+                    <span className="text text-danger" id="validation_msg">{errmsg.username}</span>
                     <br />
                     <br />
                 
                     <input type="password" name="password" onChange={(event)=>setPassword(event.target.value)} placeholder="Enter your Password" value={password} />
-                    <span class="text text-danger" id="validation_msg">{errmsg.password}</span>
+                    <span className="text text-danger" id="validation_msg">{errmsg.password}</span>
                     <br />
                     <br />
                     <button id="submit" type="submit" onClick={loginAttempt} >LOGIN </button>
                     <br />
                     <br />
                     <center>
-                    <span className="text text-info" id="register">Don't have an account? <a href="">Create One!</a></span>
+                    <span className="text text-info" id="register">Don't have an account? <a href=" ">Create One!</a></span>
                     </center>
                 </div>
             </form>

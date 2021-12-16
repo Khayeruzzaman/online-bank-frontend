@@ -5,7 +5,7 @@ const Header = () => {
     return(
         <div className={styles.flexContainerHeader}>
             <div className={styles.flexItemHeader}>
-                <img src="http://127.0.0.1:8000/sysimages/logo.png" onclick="" width="100" height="100" />
+                <img src="http://127.0.0.1:8000/sysimages/logo.png"  width="100" height="100" alt="" />
             </div>
             <div className={styles.flexItemHeader}>
                 <h1>Castle Internet Bank</h1>

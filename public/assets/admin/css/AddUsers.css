@@ -1,0 +1,58 @@
+.form legend{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form {
+        width:460px;
+        margin: 30px 585px;
+        padding:50px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px black;
+        margin-bottom: 50px;
+        
+      }
+.form  label {
+        display:block;
+        font-weight: bold;
+        text-transform: uppercase;
+
+      }
+.form legend{
+        display:block;
+        font-weight: bold;
+        box-sizing: border-box;
+        text-transform: uppercase;
+}
+
+
+.form  input {
+        display:block;
+        width: 100%;
+        border: 1px solid #000;
+        padding:5px;
+        box-sizing: border-box;
+
+      }
+
+.btn1 {
+
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #373b8b;
+    color: white;
+    border-radius: 100px;
+
+}
+
+.btn1:hover{
+	background-color: rgb(42, 34, 59);
+	color: white;
+
+
+
+}
+
+

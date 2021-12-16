@@ -1,0 +1,47 @@
+.dashContent{
+    margin-left: 310px;
+}
+
+
+
+.viewUsers{
+    
+    width:95%;
+    margin: 10px 10px;
+    padding:50px;
+    min-height: 60vh;
+    max-height: auto;
+   
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    margin-bottom: 50px;
+}
+
+
+.viewUsers #tb{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    border-collapse: collapse;
+    text-align: center;
+    border: 1;
+    border: 2px solid #373b8b;
+    border-width: 1px;
+    border-style:solid;
+}
+
+
+.viewUsers #tb tr, th, td{
+    
+    
+    border: 2px solid #063146;
+    padding: 2px 2px;
+      
+}
+
+.viewUsers #tb th{
+    background: #373b8b;
+    text-transform: uppercase;
+    column-width: 150px;
+    justify-content: center;
+    color: white
+}
