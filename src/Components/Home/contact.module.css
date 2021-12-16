@@ -2,6 +2,7 @@
     height: 200%;
     background: url("http://127.0.0.1:8000/sysimages/bank_contact.jpeg") no-repeat center center fixed;
     background-size: cover;
+    padding-bottom: 48px;
 }
 
 .flexContainerBackgroundC {

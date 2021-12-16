@@ -30,11 +30,11 @@ const Home = () => {
                     <div className={styles.flexItem1}>
                         <div className={[styles.form, styles.formControl].join(" ")}>
                             <div className={styles.flexItemLogin}>
-                                <h2>Welcome to Online Banking</h2>
+                                <h2 id="sectionHeader">Welcome to Online Banking</h2>
                             </div>
 
                             <div className={styles.flexItem}>
-                                <h4>
+                                <h4 id="sectionContent">
                                     We are offering a easier solution for banking. Our services are now more simplified with just simple clicks! <br/>
                                     We are offering:
                                     <li>Account Services</li>
@@ -44,39 +44,39 @@ const Home = () => {
                             </div>
 
                             <div className={styles.flexItemLogin}>
-                                <h2>Interest Rates</h2>
+                                <h2 id="sectionHeader">Interest Rates</h2>
                             </div>
 
                             <div className={styles.flexItem}>
-                                <h4>
+                                <h4 id="sectionContent">
                                     Interst rates for different accounts:
                                     <table>
                                         <tr>
-                                            <th><h4>Account Types</h4></th>
-                                            <th><h4>Rate</h4></th>
+                                            <th><h4 id="sectionContent">Account Types</h4></th>
+                                            <th><h4 id="sectionContent">Rate</h4></th>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <h4>Savings Account</h4>
+                                                <h4 id="sectionContent">Savings Account</h4>
                                             </td>
                                             <td>
-                                                <h4>7.5%</h4>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h4>Business Account</h4>
-                                            </td>
-                                            <td>
-                                                <h4>5%</h4>
+                                                <h4 id="sectionContent">7.5%</h4>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <h4>Student Account</h4>
+                                                <h4 id="sectionContent">Business Account</h4>
                                             </td>
                                             <td>
-                                                <h4>10.5%</h4>
+                                                <h4 id="sectionContent">5%</h4>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h4 id="sectionContent">Student Account</h4>
+                                            </td>
+                                            <td>
+                                                <h4 id="sectionContent">10.5%</h4>
                                             </td>
                                         </tr>
                                     </table>
@@ -84,19 +84,19 @@ const Home = () => {
                             </div>
 
                             <div className={styles.flexItemLogin}>
-                                <h2>Loans</h2>
+                                <h2 id="sectionHeader">Loans</h2>
                             </div>
 
                             <div className={styles.flexItem}>
-                                <h4>
+                                <h4 id="sectionContent">
                                     Loans are now even easier to maintain with our internet banking. Loans available:
                                     <table>
                                         <tr>
                                             <th>
-                                                <h4>Types Of Loan</h4>
+                                                <h4 id="sectionContent">Types Of Loan</h4>
                                             </th>
                                             <th>
-                                                <h4>Rate of Interests</h4>
+                                                <h4 id="sectionContent">Rate of Interests</h4>
                                             </th>
                                         </tr>
                                         {loantype.map(l=>(
