@@ -12,6 +12,13 @@ if(localStorage.getItem('userkey')){
 }
 axios.defaults.baseURL="http://127.0.0.1:8000/api/";
 axios.defaults.headers.common['Authorization']=token;
+// axios.intercepotors.response.use(
+//   response => response,
+//   error => {
+//     if (error.response.status === 401) {
+//       window.location.href = '/';
+//     }
+//   });
 
 ReactDOM.render(
   <React.StrictMode>

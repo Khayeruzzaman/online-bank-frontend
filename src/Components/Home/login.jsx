@@ -14,6 +14,10 @@ const Login = () => {
 
     useEffect(() => {
         document.title = "Login/SignUp"
+        if(localStorage.getItem('customerId'))
+        {
+            window.location.href = '/account/dashboard';
+        }
       }, [])
 
     const loginAttempt = async (e) => {
@@ -36,14 +40,20 @@ const Login = () => {
                 console.log(response.data.loginerror);
             }
             else if(response.data.customer){
-                swal(response.data.customer.userkey);
+                //swal(response.data.customer.userkey);
+                localStorage.setItem('customerId', response.data.customerid);
+                localStorage.setItem('customerBankId', response.data.customerbankid);
+                localStorage.setItem('customerName', response.data.customername);
+                localStorage.setItem('customerPic', response.data.customerpic);
+                localStorage.setItem('userkey',response.data.customer.userkey);
+                window.location.href = '/account/dashboard';
             }
             else if(response.data.admin){
                 //swal(response.data.adminToken.userkey);
-                localStorage.setItem('AdminId',response.data.adminid)
-                localStorage.setItem('BankId',response.data.adminbankid)
-                localStorage.setItem('AdminName',response.data.adminname)
-                localStorage.setItem('userkey',response.data.admin.userkey)
+                localStorage.setItem('AdminId',response.data.adminid);
+                localStorage.setItem('BankId',response.data.adminbankid);
+                localStorage.setItem('AdminName',response.data.adminname);
+                localStorage.setItem('userkey',response.data.admin.userkey);
                 history.push("/admin/dashboard");
             }
         }

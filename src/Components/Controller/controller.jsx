@@ -19,6 +19,9 @@ import AdminAdd from '../Admin/Add Users/AddAdmin';
 import EmpAdd from '../Admin/Add Users/AddEmp';
 import NewsCreate from '../Admin/News/news';
 import HistoryList from '../Admin/History/historyList';
+import AccountDashboard from '../Account/Dashboard/dashboard';
+import AccountNavbar from '../Account/AccountNavbar/customernavbar';
+import AccountSidebar from '../Account/AccountNavbar/customersidebar';
 
 //Admin Import
 
@@ -52,6 +55,11 @@ const HomeController = () => {
                         <Header />
                         <HomeNavbar />
                         <Login />
+                    </Route>
+                    <Route exact path={"/account/dashboard"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <AccountDashboard />
                     </Route>
                 <div style={{ 
                     background: 'url("http://127.0.0.1:8000/admin/background_images/back1.jpg") no-repeat center center fixed',
