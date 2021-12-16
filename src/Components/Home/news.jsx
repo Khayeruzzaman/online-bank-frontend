@@ -66,7 +66,7 @@ const News = () => {
                         </div>
                     </div>*/}
                     {news.map(n=>(
-                        <NewsItem title={n.newstitle} date={n.updated_at} img={n.newspicture} body={n.newsbody} />
+                        <NewsItem title={n.newstitle} date={n.updated_at} img={n.newspicture} body={n.newsbody} key={n.id} />
                     ))}
                 </div>
             </div>

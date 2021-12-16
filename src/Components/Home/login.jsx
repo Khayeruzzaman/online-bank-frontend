@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 import styles from './login.module.css';
 
 const Login = () => {
@@ -15,15 +16,28 @@ const Login = () => {
     const loginAttempt = async (e) => {
         e.preventDefault();
 
-        var obj = {username: username, password: password};
-        const response = await axios.post("http://127.0.0.1:8000/api/apilogin", obj);
-        console.log(response);
+        var obj = {'username': username, 'password': password};
+        const response = await axios.post("apilogin", obj);
+        console.log(obj);
         if(response.data.validation_error){
             setErrmsg(response.data.validation_error);
             console.log(errmsg);
         }
         else{
-            
+            if(response.data.loginerror){
+                swal({
+                    title: "Sorry for the inconvenience",
+                    text: response.data.loginerror,
+                    icon: "error",
+                  });
+                console.log(response.data.loginerror);
+            }
+            else if(response.data.customer){
+                swal(response.data.customer.userkey);
+            }
+            else if(response.data.admin){
+                swal(response.data.admin.userkey);
+            }
         }
     }
     
