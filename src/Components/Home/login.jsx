@@ -38,11 +38,12 @@ const Login = () => {
             else if(response.data.customer){
                 swal(response.data.customer.userkey);
             }
-            else if(response.data.adminToken){
+            else if(response.data.admin){
                 //swal(response.data.adminToken.userkey);
-                localStorage.setItem('AdminId',response.data.adminData.id)
-                localStorage.setItem('AdminName',response.data.adminData.adminname)
-                localStorage.setItem('AdminToken',response.data)
+                localStorage.setItem('AdminId',response.data.adminid)
+                localStorage.setItem('BankId',response.data.adminbankid)
+                localStorage.setItem('AdminName',response.data.adminname)
+                localStorage.setItem('userkey',response.data.admin.userkey)
                 history.push("/admin/dashboard");
             }
         }

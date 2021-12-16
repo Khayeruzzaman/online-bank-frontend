@@ -7,8 +7,8 @@ import HomeController from './Components/Controller/controller';
 
 var token = null;
 if(localStorage.getItem('userkey')){
-  var obj = JSON.parse(localStorage.getItem('userkey'));
-  token = obj.access_token;
+  var obj = localStorage.getItem('userkey');
+  token = obj;
 }
 axios.defaults.baseURL="http://127.0.0.1:8000/api/";
 axios.defaults.headers.common['Authorization']=token;
