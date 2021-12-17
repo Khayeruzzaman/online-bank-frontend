@@ -54,7 +54,28 @@ const AccountDashboard = () => {
 
     useEffect(() => {
         document.title = "Account Dashboard";
-        handledashboardData();
+        if(localStorage.getItem('customerId')){
+            handledashboardData();
+        }
+        else{
+            swal("Please Login First!!!", {
+                buttons: {
+                  cancel: "Go Home",
+                  Login: true,
+                },
+              })
+              .then((value) => {
+                switch (value) {
+               
+                  case "Login":
+                    window.location.href = '/login';
+                    break;
+               
+                  default:
+                    window.location.href = '/';
+                }
+              });
+        }
       }, [])
 
     return(

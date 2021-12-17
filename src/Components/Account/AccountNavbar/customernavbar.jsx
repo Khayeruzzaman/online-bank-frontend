@@ -1,7 +1,41 @@
+import axios from 'axios';
 import React from 'react';
+import swal from 'sweetalert';
 import styles from './customernavbar.module.css';
 
 const AccountNavbar = () => {
+
+    const handleLogout = () => {
+        swal("Areyou sure you want to log out?", {
+            icon: "warning",
+            buttons: {
+              cancel: "No",
+              Yes: true,
+            },
+          })
+          .then((value) => {
+            switch (value) {
+           
+              case "Yes":
+                axios.get(["apilogout", localStorage.getItem('userkey')].join('/'))
+                .then(response=>{
+                    localStorage.removeItem("customerId");
+                    localStorage.removeItem("customerBankId");
+                    localStorage.removeItem("customerName");
+                    localStorage.removeItem("customerPic");
+                    localStorage.removeItem("userkey");
+                    window.location.href = '/login';
+                }).catch(error=>{
+                    console.log(error);
+                });
+                break;
+           
+              default:
+                
+            }
+          });
+    }
+
     return(
         <div className={styles.bodydiv}>
             <div className={styles.flexContainerHeaderTop}>
@@ -30,7 +64,7 @@ const AccountNavbar = () => {
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href=""><i className="fa fa-sign-out" id={styles["navlogout"]}>&nbsp;Log Out</i></a>
+                        <a className="nav-link" onClick={handleLogout}><i className="fa fa-sign-out" id={styles["navlogout"]}>&nbsp;Log Out</i></a>
                     </li>
                     </ul>
                     
