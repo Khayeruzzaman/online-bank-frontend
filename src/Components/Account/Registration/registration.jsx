@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 import styles from './registration.module.css';
 
@@ -26,6 +26,8 @@ const AccountRegistration = () => {
     const[pss, setPss] = useState('');
     const[pssc, setPssc] = useState('');
     const[prv, setPrv] = useState('');
+
+    const hiss = useHistory();
 
     const changepro = () => {
         setProcss(styles.procsa);
@@ -55,10 +57,10 @@ const AccountRegistration = () => {
         }
       }, [])
 
-      const regAttempt = async (e) => {
+    const regAttempt = async (e) => {
         e.preventDefault();
         const obj = new FormData();
-        obj.append('profilepicture', prpc);
+        if(prpc != null){ obj.append('profilepicture', prpc); }
         obj.append('firstname', fnam);
         obj.append('lastname', lnam);
         obj.append('gender', gen);
@@ -66,7 +68,7 @@ const AccountRegistration = () => {
         obj.append('phone', phn);
         obj.append('email', eml);
         obj.append('nid', nd);
-        obj.append('niddoc', ndoc);
+        if(ndoc != null){ obj.append('niddoc', ndoc); }
         obj.append('accountname', acnm);
         obj.append('accounttype', actp);
         obj.append('password', pss);
@@ -90,10 +92,11 @@ const AccountRegistration = () => {
             }
             else if(response.data.regsuccess){
                 swal({
-                    title: "Regiteres Successfully",
+                    title: "Registered Successfully",
                     text: "Please wait until the account verification. It won't take more than 24 Hours!",
                     icon: "success",
                   });
+                hiss.push('/login');
             }
         }
     }
@@ -109,7 +112,7 @@ const AccountRegistration = () => {
 
                 <div className={ styles.flexContainerREG }>
                     <div className={styles.flexItem1REG}>
-                        <form onSubmit={regAttempt} id='REG_form' enctype="multipart/form-data">
+                        <form onSubmit={regAttempt} id='REG_form' encType="multipart/form-data">
                             <div className={styles.flexItemLoginREG}>
                                 <h2 id='REG_head'>Create Castle Bank Account:</h2>
                             </div>

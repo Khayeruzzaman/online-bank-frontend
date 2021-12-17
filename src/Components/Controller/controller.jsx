@@ -29,6 +29,12 @@ import AccountRegistration from '../Account/Registration/registration';
 import EmpEdit from '../Admin/List/empEdit';
 import AccountListEdit from '../Admin/List/accountListEdit';
 import AllUserList from '../Admin/List/allUsersList';
+import EditAccountProfile from '../Account/Profile/edit';
+import ChangeAccountPassword from '../Account/Profile/changepassword';
+import AddBeneficiary from '../Account/Beneficiary/addbeneficiary';
+import AllBeneficiaryList from '../Account/Beneficiary/allbeneficiary';
+import SendMoney from '../Account/Beneficiary/sendmoney';
+import ExternalPayment from '../Account/Beneficiary/payment';
 
 
 //Admin Import
@@ -84,6 +90,36 @@ const HomeController = () => {
                         <AccountNavbar />
                         <AccountSidebar />
                         <AccountProfile />
+                    </Route>
+                    <Route exact path={"/account/profile/edit"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <EditAccountProfile />
+                    </Route>
+                    <Route exact path={"/account/profile/change-password"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <ChangeAccountPassword />
+                    </Route>
+                    <Route exact path={"/account/beneficiary/add"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <AddBeneficiary />
+                    </Route>
+                    <Route exact path={"/account/beneficiary/List"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <AllBeneficiaryList />
+                    </Route>
+                    <Route exact path={"/account/beneficiary/List/send-money/:name/:accname"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <SendMoney />
+                    </Route>
+                    <Route exact path={"/account/payment"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <ExternalPayment />
                     </Route>
                 <div style={{ 
                     background: 'url("http://127.0.0.1:8000/admin/background_images/back1.jpg") no-repeat center center fixed',

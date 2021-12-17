@@ -38,12 +38,12 @@ const AccountSidebar = () => {
                                     </span> </i> 
                                 </a> 
                                 <ul className={ubtn ? styles.usershow : [styles.usershow, styles.show1].join(' ')}>
-                                    <li><a href="{{ route('account.beneficiarylist') }}"><i className="fas fa-exchange-alt"> &nbsp; Transfer Funds </i></a></li>
-                                    <li><a href="{{ route('account.addbeneficiary') }}"><i className="fa fa-user-plus"> &nbsp; Add Beneficiary </i></a></li>
+                                    <li><Link to='/account/beneficiary/List'><i className="fas fa-exchange-alt"> &nbsp; Transfer Funds </i></Link></li>
+                                    <li><Link to='/account/beneficiary/add'><i className="fa fa-user-plus"> &nbsp; Add Beneficiary </i></Link></li>
                                 </ul>
 
                             </li>
-                            <li> <a href= "{{ route('account.payment') }}"> <i className="fas fa-money-check-alt"> &nbsp; Payments </i> </a> </li>
+                            <li> <Link to='/account/payment'> <i className="fas fa-money-check-alt"> &nbsp; Payments </i> </Link> </li>
                         </ul>
                     </li>
                     <li> 

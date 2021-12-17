@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import styles from '../Dashboard/dashboard.module.css';
 
@@ -201,8 +202,8 @@ const AccountProfile = () => {
                 </table>
                 <br />
                 <div className="col-md-3 col-sm-4" style={{ margin: 'auto', marginRight: '0px' }}>
-                    <a href="{{ route('account.edit') }}"><button className="btn btn-outline-dark">Edit Profile</button></a>
-                    <a href="{{ route('account.changepassword') }}"><button className="btn btn-outline-dark">Change Password</button></a>
+                    <Link to='/account/profile/edit'><button className="btn btn-outline-dark">Edit Profile</button></Link>
+                    <Link to='/account/profile/change-password'><button className="btn btn-outline-dark">Change Password</button></Link>
                     <br /><br /><br /><br />
                 </div>
             </div>
