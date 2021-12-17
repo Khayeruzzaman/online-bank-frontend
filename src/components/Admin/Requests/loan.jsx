@@ -62,7 +62,7 @@ const LoanReq = (props) => {
             <td>{loantype}</td>
             
             <td>{loanamount}</td>
-            <td>{loanrequeststatus}</td>
+            <td style = {{color: 'green', fontWeight:'bold'}} >{loanrequeststatus}</td>
             
             
             <td>

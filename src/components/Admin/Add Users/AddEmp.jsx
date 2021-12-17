@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import React,{useState} from "react";
-
+import swal from 'sweetalert';
 import SideBar from "../Navbar/sidebar";
 
 
@@ -50,7 +50,7 @@ const EmpAdd = () =>{
                 const res = await axios.post('admin/create/employee/users',data);
                 if(res.data.status === 200){
                     
-                    alert(res.data.message);
+                    swal('Success',res.data.message,'success');
                     setError([]);
                     setFname('');
                     setLname('');
@@ -101,9 +101,9 @@ const EmpAdd = () =>{
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Gender</label><br/>
-                            <input type="radio" onChange={(e)=>setGender(e.target.value)} name="gender" id="gen" value="Male" /> Male
-                            <input type="radio" onChange={(e)=>setGender(e.target.value)} name="gender" id="gen" value="Female" /> Female
-                            <input type="radio" onChange={(e)=>setGender(e.target.value)} name="gender" id="gen" value="Others" /> Others
+                            <input type="radio" onChange={(e)=>setGender(e.target.value)} name="gender" style={{display: 'inline-block', width: '15%'}} value="Male" /> Male
+                            <input type="radio" onChange={(e)=>setGender(e.target.value)} name="gender" style={{display: 'inline-block', width: '15%'}} value="Female" /> Female
+                            <input type="radio" onChange={(e)=>setGender(e.target.value)} name="gender" style={{display: 'inline-block', width: '15%'}} value="Others" /> Others
                         </div>
                         <span style={{color:'red'}}>{errorList.gender}</span>
                         <br/>
@@ -180,7 +180,7 @@ const EmpAdd = () =>{
                         <br/>
 
                         <div className='form-group md-3'>
-                            <label style={{float:'left'}}>Upload Picture</label>
+                            <label style={{float:'left'}}>Upload Document</label>
                             <input className="from-control" onChange={(e)=>setDoc(e.target.files[0])} type="file" name="doc" />
                         </div>
                         <span style={{color:'red'}}>{errorList.doc}</span>

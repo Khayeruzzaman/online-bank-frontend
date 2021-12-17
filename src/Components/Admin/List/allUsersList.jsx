@@ -2,15 +2,15 @@ import React,{useEffect, useState} from "react";
 import axios from "axios";
 
 import SideBar from "../Navbar/sidebar";
-import Emp from "./emp";
+import User from "./users";
 
-const EmpList = () =>{
+const AllUserList = () =>{
 
-    const [emp, setEmp] = useState([]);
+    const [acc, setAcc] = useState([]);
     useEffect(() => {
-        axios.get("admin/dashboard/employeeList")
+        axios.get("admin/dashboard/allUserList")
         .then(resp=>{
-            setEmp(resp.data);
+            setAcc(resp.data);
         }).catch(err=>{
             console.log(err);
         });
@@ -24,7 +24,7 @@ const EmpList = () =>{
         <div className="dashContent">
 
         <center>
-        <h1 style={{color: '#2e4154', textTransform: 'uppercase'}}>Employee Lists</h1>
+        <h1 style={{color: '#2e4154', textTransform: 'uppercase'}}>Account Lists</h1>
 
         </center>
 
@@ -33,22 +33,20 @@ const EmpList = () =>{
         <table id="tb" className="table table-striped table-hover table-bordered border-dark" >
         <thead>
             <tr>
-				<th> Employee Id </th>
-				<th>Employee Name</th>
-
-				<th>Email</th>
-				<th>Salary</th>
-				<th>Designation</th>
-				<th>join Date</th>
-				<th colSpan='2'>Actions</th>
+                <th>Account Name</th>
+				
+				<th>Account Type</th>
+				<th>Balance</th>
+				<th>Interest Rate</th>
+				<th>State</th>
 			</tr>
         </thead>
 
         <tbody>
-            {emp.map((em)=>(
-                        
-                        <Emp key={em.id} details={em}/>
-                    ))}
+        {acc.map((e)=>(
+                    
+                    <User key={e.id} details={e}/>
+                ))}
        
        </tbody>
         </table>
@@ -60,4 +58,4 @@ const EmpList = () =>{
     );
 }
 
-export default EmpList;
+export default AllUserList;
