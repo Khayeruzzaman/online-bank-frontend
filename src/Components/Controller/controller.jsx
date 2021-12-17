@@ -25,6 +25,7 @@ import AdminListEdit from '../Admin/List/adminEdit';
 import AccountDashboard from '../Account/Dashboard/dashboard';
 import AccountNavbar from '../Account/AccountNavbar/customernavbar';
 import AccountSidebar from '../Account/AccountNavbar/customersidebar';
+import MyTransections from '../Account/History/history';
 
 
 //Admin Import
@@ -60,10 +61,16 @@ const HomeController = () => {
                         <HomeNavbar />
                         <Login />
                     </Route>
+                    {/**Account Routes */}
                     <Route exact path={"/account/dashboard"}>
                         <AccountNavbar />
                         <AccountSidebar />
                         <AccountDashboard />
+                    </Route>
+                    <Route exact path={"/account/my-transections"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <MyTransections />
                     </Route>
                 <div style={{ 
                     background: 'url("http://127.0.0.1:8000/admin/background_images/back1.jpg") no-repeat center center fixed',

@@ -6,7 +6,7 @@ import styles from './customernavbar.module.css';
 const AccountNavbar = () => {
 
     const handleLogout = () => {
-        swal("Areyou sure you want to log out?", {
+        swal("Are you sure that you want to log out?", {
             icon: "warning",
             buttons: {
               cancel: "No",
@@ -37,7 +37,7 @@ const AccountNavbar = () => {
     }
 
     return(
-        <div className={styles.bodydiv}>
+        <div className={styles.bodydiv} style={{ position:'fixed', width:'100%' }}>
             <div className={styles.flexContainerHeaderTop}>
                 <div className={styles.flexItemHeaderTop}>
                     <img src="http://127.0.0.1:8000/sysimages/logo.png" width="100" height="100" />

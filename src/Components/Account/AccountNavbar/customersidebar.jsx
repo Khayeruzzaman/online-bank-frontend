@@ -21,12 +21,12 @@ const AccountSidebar = () => {
     }
 
     return(
-        <div>
-            <div className="col-md-1" id ={styles['dashboard']}>
+        <div className={styles.bodydivside}>
+            <div className="col-md-1" id ={styles['dashboardAccount']}>
 
                 <ul>
                     <li> <Link to='/account/dashboard'> <i className="fa fa-server"> &nbsp; Dashboard </i> </Link> </li>
-                    <li> <a href= "{{ route('account.history') }}"> <i className="fa fa-history"> &nbsp; My Transections </i> </a> </li>
+                    <li> <Link to='/account/my-transections'> <i className="fa fa-history"> &nbsp; My Transections </i> </Link> </li>
                     <li> 
                         <a herf="" className="feat-btn" onClick={handleFbtn}>
                             <i className="fa fa-money"> &nbsp; <b>Transfers</b> <span className={fbtn ? "fa fa-caret-down first" : ['fa fa-caret-down first', styles.rotate].join(' ')}> </span> </i> 

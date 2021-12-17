@@ -9,7 +9,6 @@ const AccountDashboard = () => {
 
     const handledashboardData = async() => {
         const response = await axios.get(["account-dashboard",localStorage.getItem('customerId')].join('/'));
-        console.log(response);
         if(response.data.autherror){
             swal(response.data.autherror, {
                 buttons: {
