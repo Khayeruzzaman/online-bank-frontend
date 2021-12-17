@@ -19,9 +19,13 @@ import AdminAdd from '../Admin/Add Users/AddAdmin';
 import EmpAdd from '../Admin/Add Users/AddEmp';
 import NewsCreate from '../Admin/News/news';
 import HistoryList from '../Admin/History/historyList';
+
+import AdminListEdit from '../Admin/List/adminEdit';
+
 import AccountDashboard from '../Account/Dashboard/dashboard';
 import AccountNavbar from '../Account/AccountNavbar/customernavbar';
 import AccountSidebar from '../Account/AccountNavbar/customersidebar';
+
 
 //Admin Import
 
@@ -75,12 +79,16 @@ const HomeController = () => {
                     <ViewPro />
                     </Route>
 
-                    <Route exact path="/admin/editprofile/:id/:id">
+                    <Route exact path="/admin/editprofile">
                     <EditProfile/>
                     </Route>
 
                     <Route exact path="/admin/dashboard/adminList">
                     <AdminList/>
+                    </Route>
+
+                    <Route exact path="/admin/adminList/edit/:id">
+                    <AdminListEdit/>
                     </Route>
 
                     <Route exact path="/admin/dashboard/employeeList">

@@ -15,8 +15,10 @@ const Account = (props) => {
             <td>{accountinterestrate}</td>
             
             <td>
-                <Link to={"/admin/customerlist/edit/"+id}><button className="btn btn-primary" style={{width:'84px',textTransform:'uppercase'}}>Edit</button></Link><br/>
-                <Link to={"/admin/customerlist/disable/"+bank_user_id+"/"+id}><button className="btn btn-danger" style={{width:'85px',textTransform:'uppercase'}}>Delete</button></Link>
+                <Link to={"/admin/customerlist/edit/"+id}><button className="btn btn-primary" style={{textTransform:'uppercase'}}>Edit</button></Link>
+            </td>
+            <td>
+                <Link to={"/admin/customerlist/disable/"+bank_user_id+"/"+id}><button className="btn btn-danger" style={{textTransform:'uppercase'}}>Delete</button></Link>
             </td>
         </tr>
     );

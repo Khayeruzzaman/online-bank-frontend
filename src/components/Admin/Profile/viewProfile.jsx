@@ -9,17 +9,20 @@ const ViewPro = () => {
     const [admin, setAdmin] = useState([]);
     const [bank, setBank] = useState([]);
 
+    const id = localStorage.getItem('AdminId');
+
     useEffect(()=>{
-        axios.get( 'admin/viewprofile').then(response=>{
+        axios.get( 'admin/profileinfo/'+id).then(response=>{
             if(response.data.status === 200){
                 setAdmin(response.data.admin);
                 setBank(response.data.bank);
             }
         });
     
-    }, []);
+    }, [id]);
 
     return(
+        
     <div>
         <link href="/assets/admin/css/profile.css" rel="stylesheet" type="text/css" />
         
@@ -87,7 +90,7 @@ const ViewPro = () => {
         </table>
 
 
-        <Link to={"/admin/editprofile/"+bank.id+"/"+admin.id} style={{textTransform: 'uppercase', textAlign: 'center', marginRight: '01px', float: 'right'}}> <input className="btn1" type="submit" name="Edit" value="edit"/> </Link>
+        <Link to={"/admin/editprofile/"} style={{textTransform: 'uppercase', textAlign: 'center', marginRight: '01px', float: 'right'}}> <input className="btn1" type="submit" name="Edit" value="edit"/> </Link>
         <br/>
         <br/>
     </div>

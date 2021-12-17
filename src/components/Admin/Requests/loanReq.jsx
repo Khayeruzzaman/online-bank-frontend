@@ -36,7 +36,7 @@ const LoanRequest = () => {
                         <th>Loan Type</th>
                         <th>Loan Amount</th>
                         <th>Status</th>
-                        <th>Actions</th>
+                        <th colSpan='2'>Actions</th>
                     </tr>
                 </thead>
                 <tbody>

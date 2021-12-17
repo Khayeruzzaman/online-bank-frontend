@@ -40,7 +40,7 @@ const AccountList = () =>{
 				<th>Interest Rate</th>
 				
 				<th>State</th>
-				<th>Actions</th>
+				<th colSpan='2'>Actions</th>
 			</tr>
         </thead>
 

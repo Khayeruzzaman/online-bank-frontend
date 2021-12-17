@@ -38,7 +38,7 @@ const AdminList = () =>{
             <th>Admin Picture</th>
             <th>Email</th>
             <th>Salary</th>
-            <th>Actions</th>
+            <th colSpan='2'>Actions</th>
         </tr>
         </thead>
         <tbody>
