@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import React,{useState} from "react";
-
+import swal from 'sweetalert';
 import SideBar from "../Navbar/sidebar";
 
 
@@ -43,7 +43,7 @@ const AdminAdd = () =>{
                 const res = await axios.post('admin/create/admin/users',data);
                 if(res.data.status === 200){
                     
-                    alert(res.data.message);
+                    swal('Success',res.data.message,'success');
                     setError([]);
                     setFname('');
                     setLname('');

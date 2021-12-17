@@ -19,15 +19,16 @@ import AdminAdd from '../Admin/Add Users/AddAdmin';
 import EmpAdd from '../Admin/Add Users/AddEmp';
 import NewsCreate from '../Admin/News/news';
 import HistoryList from '../Admin/History/historyList';
-
 import AdminListEdit from '../Admin/List/adminEdit';
-
 import AccountDashboard from '../Account/Dashboard/dashboard';
 import AccountNavbar from '../Account/AccountNavbar/customernavbar';
 import AccountSidebar from '../Account/AccountNavbar/customersidebar';
 import MyTransections from '../Account/History/history';
 import AccountProfile from '../Account/Profile/profile';
 import AccountRegistration from '../Account/Registration/registration';
+import EmpEdit from '../Admin/List/empEdit';
+import AccountListEdit from '../Admin/List/accountListEdit';
+import AllUserList from '../Admin/List/allUsersList';
 
 
 //Admin Import
@@ -114,8 +115,20 @@ const HomeController = () => {
                     <EmpList/>
                     </Route>
 
+                    <Route exact path="/admin/emplist/edit/:id">
+                    <EmpEdit/>
+                    </Route>
+
+                    <Route exact path="/admin/dashboard/allUserList">
+                    <AllUserList/>
+                    </Route>
+
                     <Route exact path="/admin/dashboard/customerList">
                     <AccountList/>
+                    </Route>
+
+                    <Route exact path="/admin/customerlist/edit/:id">
+                    <AccountListEdit/>
                     </Route>
 
                     <Route exact path="/admin/customer/requests">
