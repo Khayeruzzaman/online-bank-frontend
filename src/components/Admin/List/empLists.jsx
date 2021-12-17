@@ -40,7 +40,7 @@ const EmpList = () =>{
 				<th>Salary</th>
 				<th>Designation</th>
 				<th>join Date</th>
-				<th>Actions</th>
+				<th colSpan='2'>Actions</th>
 			</tr>
         </thead>
 

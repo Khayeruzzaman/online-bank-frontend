@@ -2,13 +2,14 @@
 
 import axios from "axios";
 import React,{useState, useEffect} from "react";
+import { useParams } from "react-router-dom";
 
 import SideBar from "../Navbar/sidebar";
 
 
-const EditProfile = (props) =>{
+const AdminListEdit = () =>{
 
-    
+    const  {id} = useParams();
 
     const [errorList,setError]= useState([]); 
     const [fname,setFname]= useState();
@@ -25,15 +26,16 @@ const EditProfile = (props) =>{
     const [admin, setAdmin] = useState([]);
     const [bank, setBank] = useState([]);
 
-    const id = localStorage.getItem('AdminId');
+    
 
     useEffect(()=>{
-        axios.get( 'admin/profileinfo/'+id).then(response=>{
+
+        
+        axios.get( '/admin/adminlist/edit/'+id).then(response=>{
             if(response.data.status === 200){
 
                 setAdmin(response.data.admin);
                 setBank(response.data.bank);
-
                 setFname(response.data.bank.firstname);
                 setLname(response.data.bank.lastname);
                 setDob(response.data.bank.dateofbirth);
@@ -48,8 +50,6 @@ const EditProfile = (props) =>{
             
         });
         
-        
-
     }, [id]);
 
 
@@ -78,7 +78,7 @@ const EditProfile = (props) =>{
             console.log(fname)
             
 
-                const res = await axios.post('admin/editprofile/'+bank.id+'/'+admin.id,data);
+                const res = await axios.post('admin/adminlist/update/'+admin.id,data);
                 if(res.data.status === 200){
                     
                     alert(res.data.message);
@@ -183,4 +183,4 @@ const EditProfile = (props) =>{
 
 }
 
-export default EditProfile;
+export default AdminListEdit;

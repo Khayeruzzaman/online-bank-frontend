@@ -1,9 +1,35 @@
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const Admin = (props) => {
 
-    const  {id, adminname, userprofilepicture, email, adminsalary,bank_user_id} = props.adDetails;
+    const  {id, adminname, userprofilepicture, email, adminsalary} = props.adDetails;
+
+    const deleteAdmin = (e, id) =>{
+        e.preventDefault();
+
+        const thisClicked = e.currentTarget;
+        thisClicked.innerText = "Deleting";
+
+        axios.get("/admin/adminlist/delete-admin/"+id)
+        .then(res=>{
+            if (res.data.status === 200){
+                
+                swal('Success',res.data.message,'success');
+                thisClicked.closest('tr').remove();
+            
+            }else if(res.data.status === 420){
+               
+                swal('Success',res.data.message,'success');
+                thisClicked.innerText= "Delete";
+
+            }
+        })
+    }
+
+
     return(
         <tr key={id}>
             <td>{id}</td>
@@ -13,7 +39,9 @@ const Admin = (props) => {
             <td>{adminsalary}</td>
             <td>
                 <Link to={"/admin/adminlist/edit/"+id}><button className="btn btn-primary" style={{width:'84px',textTransform:'uppercase'}}>Edit</button></Link><br/>
-                <Link to={"/admin/adminlist/edit/"+bank_user_id+"/"+id}><button className="btn btn-danger" style={{width:'85px',textTransform:'uppercase'}}>Delete</button></Link>
+            </td>
+            <td>
+                <button type='button' onClick={(e) => deleteAdmin(e, id) } className="btn btn-danger" style={{textTransform:'uppercase'}}>Delete</button>
             </td>
         </tr>
     );
