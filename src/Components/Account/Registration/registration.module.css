@@ -1,0 +1,227 @@
+.procsb{
+    display: none;
+}
+
+.procsa{
+    display: inline-block;
+    margin: 10px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.nidb{
+    display: none;
+}
+
+.nida{
+    display: inline-block;
+    margin-left:10px;
+    color: white;
+    border:2px solid white;
+    border-radius: 5px;
+}
+
+.bodydivREG {
+    height: 100%;
+    background: url("http://127.0.0.1:8000/sysimages/bank_registration.jpeg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.flexContainerBackgroundREG {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    overflow: auto;
+    width: auto;
+}
+
+.flexContainerREG {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flexItemREG {
+    margin: auto;
+    margin-top: 0px;
+    background: transparent;
+}
+
+.flexItem0REG {
+    margin: auto;
+    width: 100%;
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+.flexItem1REG {
+    margin: auto;
+    margin-top: 50px;
+    background: #21292cd7;
+    width: 1200px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 540px) {
+    .flexItem1REG {
+        margin-top: 0px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .flexItem1REG {
+        margin-top: 0px;
+        width: auto;
+    }
+}
+
+h1[id="form_header_REG"] {
+    line-height: 60px;
+    margin-left: 20px;
+    margin-top: 30px;
+    font-family: Roboto-Thin;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+/* Bordered form */
+form[id='REG_form'] {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 2px solid #f1f1f1;
+    border-radius: 10px;
+}
+
+h2[id='REG_head'] {
+    font-family: OpenSans-Light;
+    color: white;
+    font-size: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white
+    
+}
+
+.flexItemLoginREG {
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    background-color: transparent;
+}
+
+/* Full-width inputs */
+input[id="text_In_REG"] {
+    font-family: Roboto-Regular;
+    color: #212121;
+    font-size: 18px;
+    width: 97%;
+    height: 40px;
+    margin: 10px;
+    padding: 1px 1px;
+    bottom: 0;
+    border: 0;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 3px;
+}
+
+label[id="profilepicture"] {
+    font-family: Roboto-Regular;
+    color: #212121;
+    font-size: 18px;
+    width: 97%;
+    height: 40px;
+    margin: 10px;
+    padding: 5px 100px 5px 100px;
+    bottom: 0;
+    border: 2px solid #263238;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+input[name="firstnameREG"], input[name="lastnameREG"], input[name="genderREG"], input[name="passwordREG"], input[name="password_confirmationREG"] {
+    font-family: Roboto-Regular;
+    color: #212121;
+    font-size: 18px;
+    width: 47.5%;
+    height: 40px;
+    margin: 10px;
+    padding: 1px 1px;
+    bottom: 0;
+    border: 0;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 3px;
+}
+
+input[name="genderREG"], input[name="accounttypeREG"], input[name="privacyREG"] {
+    font-family: Roboto-Regular;
+    color: #212121;
+    font-size: 18px;
+    width: 2%;
+    height: 20px;
+    margin: 10px;
+    margin-right: 0px;
+    padding: 1px 1px;
+    bottom: 0;
+    border: 0;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 3px;
+}
+
+/* Set a style for all buttons */
+button[id='submitbtn'] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-family: OpenSans-Regular;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* Add a hover effect for buttons */
+button[id='submitbtn']:hover {
+    opacity: 0.8;
+}
+
+span[id="validation_msg_REG"]{
+    color: red;
+    margin-left: 20px;
+}
+
+span[id="registerREG"]{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+a[id="createREG"]:hover {
+    font-size: 23px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+strong[id="validation_msg_REG"]{
+    color: red;
+    margin-left: 20px;
+}
+
+strong[id="gender-text_REG"]{
+    font-family: Roboto-Regular;
+    color: white;
+    font-size: 18px;
+    margin-left: 20px;
+}

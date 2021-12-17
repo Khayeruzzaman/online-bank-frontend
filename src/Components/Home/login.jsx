@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import styles from './login.module.css';
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 
 const Login = () => {
@@ -81,7 +81,7 @@ const Login = () => {
                     <br />
                     <br />
                     <center>
-                    <span className="text text-info" id="register">Don't have an account? <a href=" ">Create One!</a></span>
+                    <span className="text text-info" id="register">Don't have an account? <Link to='/account-registration'>Create One!</Link></span>
                     </center>
                 </div>
             </form>

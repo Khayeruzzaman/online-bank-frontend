@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
 import styles from './customernavbar.module.css';
 
@@ -49,7 +50,6 @@ const AccountNavbar = () => {
 
 
 
-
             <nav className="navbar" style={{ textTransform: 'uppercase', backgroundColor: '#263238' }} >
                 
                 <div className="container-fluid" style={{ justifyContent: 'end' }}>
@@ -60,7 +60,7 @@ const AccountNavbar = () => {
                     </ul>
                     <ul className="nav justify-content-end"  style={{ fontSize:'20px' }}>
                     <li className="nav-item">
-                        <a className = "nav-link active"  href=""><img src={["http://127.0.0.1:8000/storage/account/profilepictures/",localStorage.getItem('customerPic')].join('')} style={{ maxHeight: '30px', maxWidth:'30px', border:'2px solid #263238', borderRadius:'20px' }} id={styles["navP"]} /><strong id={styles["navP"]}>&nbsp;Account Details</strong></a>
+                        <Link to='/account/profile' className = "nav-link active"><img src={["http://127.0.0.1:8000/storage/account/profilepictures/",localStorage.getItem('customerPic')].join('')} style={{ maxHeight: '30px', maxWidth:'30px', border:'2px solid #263238', borderRadius:'20px' }} id={styles["navP"]} /><strong id={styles["navP"]}>&nbsp;Account Details</strong></Link>
                     </li>
 
                     <li className="nav-item">
