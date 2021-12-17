@@ -1,0 +1,73 @@
+.bodydiv {
+    margin: 0;
+    padding: 0;
+    background-color:  #FAFAFA;
+}
+
+.flexContainerHeaderTop {
+    display: -webkit-flex;
+    display: flex;
+    width: auto;
+    height: auto;
+    background-color: #263238;
+}
+
+.flexItemHeaderTop {
+    width: auto;
+    height: 100px;
+    margin: 10px;
+}
+
+h1[id="acchead"] {
+    font-family: OpenSans-Light;
+    color: white;
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-top: calc((1.5rem - 2rem) + 2.5rem);
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 855px) {
+h1[id="acchead"] {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin-top: calc((1.5rem - 2rem) + 2rem);
+    margin-bottom: 1.5rem;
+}
+}
+
+@media screen and (max-width: 510px) {
+h1[id="acchead"] {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-top: calc((1.5rem - 2rem) + 1.5rem);
+    margin-bottom: 1.5rem;
+}
+}
+
+#navP{
+    font-family: OpenSans-Light;
+    color:white;
+}
+
+#navP:hover{
+    font-family: OpenSans-Light;
+    color:#a1a7d3;
+}
+
+#navA{
+    color:white;
+}
+
+#navA:hover{
+    color:#a1a7d3;
+}
+
+
+#navlogout{
+    color: white;
+}
+
+#navlogout:hover{
+    color:red;
+}
