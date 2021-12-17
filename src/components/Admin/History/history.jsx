@@ -4,6 +4,7 @@ import React from 'react';
 const History = (props) => {
 
     const  {id, historydate, account_id, remarks, debit,credit,created_at} = props.details;
+    
     return(
         
         <tr>
