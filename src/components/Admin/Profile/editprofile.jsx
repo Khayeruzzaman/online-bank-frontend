@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import React,{useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 
 import SideBar from "../Navbar/sidebar";
 
@@ -100,6 +101,14 @@ const EditProfile = (props) =>{
                 
 
                     <form >
+                        <center>
+                        <img src={"http://127.0.0.1:8000/storage/admin/admin_cover_images/"+bank.userprofilepicture}
+                                            style={{width: '180px', height:'180px'}} alt="" /><br/>
+                        <Link style={{textDecoration: 'none'}} to={"/admin/editPicture/"+bank.id}>Update Profile Pictrue</Link>
+                        </center>
+
+                        <br/>
+                    
                         
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>First Name</label>

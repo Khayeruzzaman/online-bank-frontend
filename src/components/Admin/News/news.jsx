@@ -1,7 +1,39 @@
-import React from "react";
 import SideBar from "../Navbar/sidebar";
+import React,{useState} from "react";
+import swal from 'sweetalert';
+import axios from "axios";
 
 const NewsCreate = () =>{
+
+    const [newsTitle,setTitle]= useState();
+    const [newsBody,setBody]= useState();
+    const [pic,setPic]= useState();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        
+            const data = new FormData();
+                data.append('newsTitle', newsTitle);
+                data.append('newsBody', newsBody);
+                data.append('pic', pic);
+
+                console.log(newsTitle);
+                
+
+                const res = await axios.post('admin/news/create',data);
+
+                if(res.data.status === 200){
+                    
+                    alert(res.data.message);
+                    
+                    setPic('');
+                    setTitle('');
+                    setBody('');
+                }
+
+                
+           
+    }
 
     return(
         <div>
@@ -11,12 +43,12 @@ const NewsCreate = () =>{
 
                 <div className="viewUsers">
 
-                    <form method="post" encType="multipart/form-data">
+                    <form>
                     
                     <div className='form-group md-3'>
                         <label className="newsLabel"> News Title </label>
                         <br/>
-                        <input type="text" name="newstitle" className="newsTitle" />
+                        <input type="text" onChange={(e)=>setTitle(e.target.value)} name="newsTitle" className="newsTitle" />
                     </div>
                     <br/>
                     
@@ -24,7 +56,7 @@ const NewsCreate = () =>{
                     <br/>
                     <div className='form-group md-3'>
                         <label className="newsLabel"> Upload News Image </label><br/>
-                        <input type="file" name='pic'/>
+                        <input type="file" onChange={(e)=>setPic(e.target.files[0])} name='pic'/>
                     </div>
                    
 
@@ -32,15 +64,14 @@ const NewsCreate = () =>{
                     <br/>
 
                     <label className="newsLabel">Write news here:</label>
-                    <textarea name="newsBody" className="newsBody">
-                        
-                    </textarea>
+                    <textarea name="newsBody" onChange={(e)=>setBody(e.target.value)} className="newsBody" />
+                    
                     
 
                     
                     <br/><br/>
 
-                    <input className="btnSubmit" type="submit" name="submit" value="Submit"/>
+                    <input className="btnSubmit" onClick={handleSubmit} type="submit" name="submit" value="Submit"/>
 
                     </form>
 
