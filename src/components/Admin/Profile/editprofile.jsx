@@ -100,7 +100,7 @@ const EditProfile = (props) =>{
                 <div className= "form">
                 
 
-                    <form >
+                    <form>
                         <center>
                         <img src={"http://127.0.0.1:8000/storage/admin/admin_cover_images/"+bank.userprofilepicture}
                                             style={{width: '180px', height:'180px'}} alt="" /><br/>

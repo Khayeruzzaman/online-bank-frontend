@@ -2,24 +2,83 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import SideBar from "../Navbar/sidebar";
 import { Link } from 'react-router-dom';
-
+import swal from 'sweetalert';
 
 const Dashboard = () => {
 
 
-    const [data, setData] = useState([['0'],['1'],['2']]);
-    useEffect(() => {
-        axios.get("admin/dashboard")
-        .then(resp=>{
-            setData(resp.data);
-        }).catch(err=>{
-            console.log(err);
-        });
-    }, []);
+    const [adminsNo, setAdmin] = useState();
+    const [employeesNo, setEmp] = useState();
+    const [accountsNo, setCus] = useState();
 
-    var adminsNo = data[0].length;
-    var employeesNo = data[1].length;
-    var accountsNo = data[2].length;
+    const handledashboardData = async() => {
+
+
+        const response = await  axios.get("admin/dashboard")
+        if(response.data.autherror){
+            swal(response.data.autherror, {
+                buttons: {
+                  cancel: "Go Home",
+                  Login: true,
+                },
+              })
+              .then((value) => {
+                switch (value) {
+               
+                  case "Login":
+                    localStorage.removeItem("AdminId");
+                    localStorage.removeItem("BankId");
+                    localStorage.removeItem("AdminName");
+                    localStorage.removeItem("userkey");
+                    window.location.href = '/login';
+                    break;
+               
+                  default:
+                    localStorage.removeItem("AdminId");
+                    localStorage.removeItem("BankId");
+                    localStorage.removeItem("AdminName");
+                    localStorage.removeItem("userkey");
+                    window.location.href = '/';
+                }
+              });
+        }
+        else if(response.data.status === 200){
+                setAdmin(response.data.adminsNo);
+                setEmp(response.data.employeesNo);
+                setCus(response.data.accountNo);
+            }
+        }
+
+
+
+    useEffect(() => {
+        document.title = "Account Dashboard";
+        if(localStorage.getItem('AdminId')){
+            handledashboardData();
+        }
+        else{
+            swal("Please Login First!!!", {
+                buttons: {
+                  cancel: "Go Home",
+                  Login: true,
+                },
+              })
+              .then((value) => {
+                switch (value) {
+               
+                  case "Login":
+                    window.location.href = '/login';
+                    break;
+               
+                  default:
+                    window.location.href = '/';
+                }
+              });
+        }
+      }, [])
+   
+
+    
 
     return (
         

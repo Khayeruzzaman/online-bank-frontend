@@ -5,14 +5,14 @@
 .viewUsers{
     
     width:95%;
-    margin: 30px 10px;
+    margin: 30px;
+    margin-left: 5px;
     padding:50px;
     min-height: 60vh;
     max-height: auto;
     background: transparent;
     border-radius: 10px;
     box-shadow: 0px 0px 10px black;
-    margin-bottom: 50px;
 }
 
 
@@ -51,9 +51,9 @@
     cursor: pointer;
     background-color: #373b8b;
     color: white;
-    border-radius: 2px;
-    width: 10%;
-    height: 35%;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
 
 
 }

@@ -24,14 +24,17 @@ const NewsCreate = () =>{
 
                 if(res.data.status === 200){
                     
-                    alert(res.data.message);
+                    swal('Success',res.data.message,'success');
                     
                     setPic('');
                     setTitle('');
                     setBody('');
                 }
 
-                
+                else if(res.data.status === 422){
+
+                    swal('Error',res.data.errors,'error')
+                }
            
     }
 
@@ -69,10 +72,10 @@ const NewsCreate = () =>{
                     
 
                     
-                    <br/><br/>
+                    <br/>
 
                     <input className="btnSubmit" onClick={handleSubmit} type="submit" name="submit" value="Submit"/>
-
+                    <br/>
                     </form>
 
                 </div>

@@ -54,7 +54,7 @@ const Login = () => {
                 localStorage.setItem('BankId',response.data.adminbankid);
                 localStorage.setItem('AdminName',response.data.adminname);
                 localStorage.setItem('userkey',response.data.admin.userkey);
-                history.push("/admin/dashboard");
+                window.location.href = '/admin/dashboard';
             }
         }
     }

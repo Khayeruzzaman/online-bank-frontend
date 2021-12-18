@@ -48,7 +48,7 @@ const SideBar = () =>{
                                 <ul className={ubtn ? "user-show" : ["user-show", "show1"].join(' ')}> 
                                     <li><a href="/admin/create/admin/users"><i className="fa fa-user-plus"> Admin </i></a></li>
                                     <li><a href="/admin/create/employee/users"><i className="fa fa-user-plus"> Employee </i></a></li>
-                                    <li><a href=" "><i className="fa fa-user-plus"> Customer </i></a></li>
+                                    
                                 </ul>
 
                             </li>

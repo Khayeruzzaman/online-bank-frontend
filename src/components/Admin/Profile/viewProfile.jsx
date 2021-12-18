@@ -93,7 +93,7 @@ const ViewPro = () => {
 
         <Link to={"/admin/editprofile/"} style={{textTransform: 'uppercase', textAlign: 'center', marginRight: '01px', float: 'right'}}> <input className="btn1" type="submit" name="Edit" value="edit"/> </Link>
         <br/>
-        <br/>
+        
     </div>
 </div>
 
