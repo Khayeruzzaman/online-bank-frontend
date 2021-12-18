@@ -95,7 +95,11 @@ const EmpEdit = () =>{
                 
 
                     <form>
-                        <legend>Employee Registration</legend>
+                    <center>
+                        <img src={"http://127.0.0.1:8000/storage/admin/admin_cover_images/"+bank.userprofilepicture}
+                                            style={{width: '180px', height:'180px'}} alt="" /><br/>
+                        <br/>
+                    </center>
                         <br/>
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>First Name</label>

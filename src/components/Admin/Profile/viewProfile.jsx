@@ -32,13 +32,14 @@ const ViewPro = () => {
         <table className="table table-striped table-hover table-bordered border-dark" >
         <tbody>
         <tr>
-            <th style={{textAlign: 'center', backgroundColor: '#373b8b', color: 'white'}} colSpan="3"> Shakib's Information </th>
+            <th style={{textAlign: 'center', backgroundColor: '#373b8b', color: 'white'}} colSpan="3"> {localStorage.getItem('AdminName')}'s Information </th>
         </tr>
         <tr>
             <th>First Name</th>
             <td>{bank.firstname}</td>
             <td rowSpan="5" style={{textAlign: 'center'}}>
-                <img src={bank.userprofilepicture}
+           
+                <img src={"http://127.0.0.1:8000/storage/admin/admin_cover_images/"+bank.userprofilepicture}
                 style={{width: '180px', height:'180px'}} alt="" /></td>
         </tr>
 

@@ -34,7 +34,12 @@ const Admin = (props) => {
         <tr key={id}>
             <td>{id}</td>
             <td>{adminname}</td>
-            <td>{userprofilepicture}</td>
+            <td>
+                <a href={"http://127.0.0.1:8000/storage/admin/admin_cover_images/"+userprofilepicture}>
+                <img src={"http://127.0.0.1:8000/storage/admin/admin_cover_images/"+userprofilepicture}
+                                            style={{width: '40px', height:'40px'}} alt="" />
+                </a>
+            </td>
             <td>{email}</td>
             <td>{adminsalary}</td>
             <td>

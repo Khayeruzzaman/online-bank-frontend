@@ -15,7 +15,6 @@ const User = (props) => {
             <td>{accountbalance}</td>
             <td>{accountinterestrate}</td>
             <td style={{color:'green' ,fontWeight:'bold'}}>{accountstate}</td>
-            
         </tr>
     );
 }

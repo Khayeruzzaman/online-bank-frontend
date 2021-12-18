@@ -29,6 +29,7 @@ import AccountRegistration from '../Account/Registration/registration';
 import EmpEdit from '../Admin/List/empEdit';
 import AccountListEdit from '../Admin/List/accountListEdit';
 import AllUserList from '../Admin/List/allUsersList';
+import Upload from '../Admin/Profile/uploadPic';
 
 
 //Admin Import
@@ -101,6 +102,9 @@ const HomeController = () => {
 
                     <Route exact path="/admin/editprofile">
                     <EditProfile/>
+                    </Route>
+                    <Route exact path="/admin/editPicture/:id">
+                    <Upload/>
                     </Route>
 
                     <Route exact path="/admin/dashboard/adminList">
