@@ -82,7 +82,7 @@ const AccountDashboard = () => {
             <div className={styles.flexContainerDash}>
                 <div className={styles.flexItemDash}>
                     <h1 id="customeriddash">
-                        Welcome, shihab&nbsp;Ahmed!
+                        Welcome, {dashboardData.name}!
                     </h1>
                     <p id="customeriddash">
                         &#9656; Balance (BDT): {dashboardData.balance}/-

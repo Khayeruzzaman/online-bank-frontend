@@ -38,12 +38,12 @@ const AccountSidebar = () => {
                                     </span> </i> 
                                 </a> 
                                 <ul className={ubtn ? styles.usershow : [styles.usershow, styles.show1].join(' ')}>
-                                    <li><a href="{{ route('account.beneficiarylist') }}"><i className="fas fa-exchange-alt"> &nbsp; Transfer Funds </i></a></li>
-                                    <li><a href="{{ route('account.addbeneficiary') }}"><i className="fa fa-user-plus"> &nbsp; Add Beneficiary </i></a></li>
+                                    <li><Link to='/account/beneficiary/List'><i className="fas fa-exchange-alt"> &nbsp; Transfer Funds </i></Link></li>
+                                    <li><Link to='/account/beneficiary/add'><i className="fa fa-user-plus"> &nbsp; Add Beneficiary </i></Link></li>
                                 </ul>
 
                             </li>
-                            <li> <a href= "{{ route('account.payment') }}"> <i className="fas fa-money-check-alt"> &nbsp; Payments </i> </a> </li>
+                            <li> <Link to='/account/payment'> <i className="fas fa-money-check-alt"> &nbsp; Payments </i> </Link> </li>
                         </ul>
                     </li>
                     <li> 
@@ -52,31 +52,12 @@ const AccountSidebar = () => {
                             </span></i> 
                         </a>
                         <ul className={rbtn ? styles.reqshow : [styles.reqshow, styles.show3].join(' ')}>
-                            <li> <a href= "{{ route('account.loanrequest') }}"> <i className="fas fa-plus"> &nbsp;Create Loan Request </i> </a> </li>
-                            <li> <a href= "{{ route('account.loanstate') }}"> <i className="far fa-check-circle"> &nbsp;<strong>Check Request Status</strong> </i> </a> </li>
+                            <li> <Link to='/account/loan/request'> <i className="fas fa-plus"> &nbsp;Create Loan Request </i> </Link> </li>
+                            <li> <Link to='/account/loan/status'> <i className="far fa-check-circle"> &nbsp;<strong>Check Request Status</strong> </i> </Link> </li>
                         </ul> 
                     </li>
-                    <li> <a href= "{{ route('account.statement') }}"> <i className="fas fa-file-alt"> &nbsp; E-Statement </i> </a> </li>
+                    <li> <Link to='/account/e-statement-download'> <i className="fas fa-file-alt"> &nbsp; E-Statement </i> </Link> </li>
                 </ul>
-
-                {/*<script >
-
-                    $('.feat-btn').click( function(){
-                    $('#dashboard ul .feat-show').toggleClass("show");
-                    $('#dashboard ul .first').toggleClass("rotate");
-                });
-
-                    $('.user-btn').click( function(){
-                    $('#dashboard ul .user-show').toggleClass("show1");
-                    $('#dashboard ul .second').toggleClass("rotate");
-                });
-
-                $('.req-btn').click( function(){
-                    $('#dashboard ul .req-show').toggleClass("show3");
-                    $('#dashboard ul .third').toggleClass("rotate");
-                });
-
-            </script>*/}
             </div>
         </div>
     );

@@ -1,0 +1,11 @@
+.discss {
+    display: inline-block;
+    margin: 10px;
+    color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.blcss {
+    display: none;
+}
