@@ -83,12 +83,34 @@ const AccountLoanRequest = () => {
 
     useEffect(() => {
         document.title = "Loan Request Form"
-        axios.get("loan-types")
+        
+        if(localStorage.getItem('customerId')){
+            axios.get("loan-types")
         .then(response=>{
             setLoanType(response.data);
         }).catch(error=>{
             console.log(error);
         });
+        }
+        else{
+            swal("Please Login First!!!", {
+                buttons: {
+                  cancel: "Go Home",
+                  Login: true,
+                },
+              })
+              .then((value) => {
+                switch (value) {
+               
+                  case "Login":
+                    window.location.href = '/login';
+                    break;
+               
+                  default:
+                    window.location.href = '/';
+                }
+              });
+        }
     }, [])
 
     if(loantype.length > 0){

@@ -65,7 +65,29 @@ const AccountStatement = () => {
     
     useEffect(() => {
         document.title = "E-Statement";
-        handleHistorydData();
+        
+        if(localStorage.getItem('customerId')){
+            handleHistorydData();
+        }
+        else{
+            swal("Please Login First!!!", {
+                buttons: {
+                  cancel: "Go Home",
+                  Login: true,
+                },
+              })
+              .then((value) => {
+                switch (value) {
+               
+                  case "Login":
+                    window.location.href = '/login';
+                    break;
+               
+                  default:
+                    window.location.href = '/';
+                }
+              });
+        }
         //console.log(history);
       }, []);
 

@@ -15,6 +15,28 @@ const SendMoney = () => {
 
     useEffect(() => {
         document.title = "Send Money";
+        if(localStorage.getItem('customerId')){
+            
+        }
+        else{
+            swal("Please Login First!!!", {
+                buttons: {
+                  cancel: "Go Home",
+                  Login: true,
+                },
+              })
+              .then((value) => {
+                switch (value) {
+               
+                  case "Login":
+                    window.location.href = '/login';
+                    break;
+               
+                  default:
+                    window.location.href = '/';
+                }
+              });
+        }
     }, []);
 
     const sendAttempt = async (e) => {

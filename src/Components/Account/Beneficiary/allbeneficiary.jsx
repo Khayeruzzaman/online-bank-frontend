@@ -10,7 +10,29 @@ const AllBeneficiaryList = () => {
 
     useEffect(() => {
         document.title = "Beneficiary List";
-        handlebenData();
+        
+        if(localStorage.getItem('customerId')){
+            handlebenData();
+        }
+        else{
+            swal("Please Login First!!!", {
+                buttons: {
+                  cancel: "Go Home",
+                  Login: true,
+                },
+              })
+              .then((value) => {
+                switch (value) {
+               
+                  case "Login":
+                    window.location.href = '/login';
+                    break;
+               
+                  default:
+                    window.location.href = '/';
+                }
+              });
+        }
     }, []);
 
     const handlebenData = async() => {
