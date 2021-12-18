@@ -144,7 +144,8 @@ const HomeController = () => {
                     background: 'url("http://127.0.0.1:8000/admin/background_images/back1.jpg") no-repeat center center fixed',
                     backgroundSize: 'cover',
                     minHeight: '100vh',
-                    boxSizing: 'border-box'
+                    boxSizing: 'border-box',
+                    paddingBottom:'10px'
                 }}>
                     <Route exact path="/admin/dashboard">
                     <Dashboard/>

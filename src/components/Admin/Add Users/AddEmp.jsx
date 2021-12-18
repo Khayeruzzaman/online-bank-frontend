@@ -9,20 +9,20 @@ import SideBar from "../Navbar/sidebar";
 const EmpAdd = () =>{
 
     const [errorList,setError]= useState([]); 
-    const [fname,setFname]= useState();
-    const [lname,setLname]= useState();
-    const [gender,setGender]= useState();
-    const [dob, setDob] = useState(new Date());
-    const [phone,setPhone]= useState();
-    const [email,setEmail]= useState();
-    const [pic,setPic]= useState();
-    const [nid,setNid]= useState();
-    const [emp_name,setEmpname]= useState();
-    const [password,setPassword]= useState();
-    const [sal,setSal]= useState();
-    const [desig,setDesig]= useState();
-    const [joinDate,setJd]= useState();
-    const [doc,setDoc]= useState();
+    const [fname,setFname]= useState('');
+    const [lname,setLname]= useState('');
+    const [gender,setGender]= useState('');
+    const [dob, setDob] = useState('');
+    const [phone,setPhone]= useState('');
+    const [email,setEmail]= useState('');
+    const [pic,setPic]= useState('');
+    const [nid,setNid]= useState('');
+    const [emp_name,setEmpname]= useState('');
+    const [password,setPassword]= useState('');
+    const [sal,setSal]= useState('');
+    const [desig,setDesig]= useState('');
+    const [joinDate,setJd]= useState('');
+    const [doc,setDoc]= useState('');
 
 
     const handleSubmit = async (e) => {
@@ -88,14 +88,14 @@ const EmpAdd = () =>{
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>First Name</label>
                             <input type='text' name='fname' onChange={(e)=>setFname(e.target.value)} value={fname} className='form-control' />
-                            <span style={{color:'red'}}>{errorList.fname}</span>
+                            <span className='errorSpan'>{errorList.fname}</span>
                         </div>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Last Name</label>
                             <input type='text' name='lname' onChange={(e)=>setLname(e.target.value)} value={lname} className='form-control' />
-                            <span style={{color:'red'}}>{errorList.lname}</span>
+                            <span className='errorSpan'>{errorList.lname}</span>
                         </div>
                         <br/>
 
@@ -104,86 +104,85 @@ const EmpAdd = () =>{
                             <input type="radio" onChange={(e)=>setGender(e.target.value)} name="gender" style={{display: 'inline-block', width: '15%'}} value="Male" /> Male
                             <input type="radio" onChange={(e)=>setGender(e.target.value)} name="gender" style={{display: 'inline-block', width: '15%'}} value="Female" /> Female
                             <input type="radio" onChange={(e)=>setGender(e.target.value)} name="gender" style={{display: 'inline-block', width: '15%'}} value="Others" /> Others
+                            <br/><span className='errorSpan'>{errorList.gender}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.gender}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Date Of Birth</label>
                             <input type='date' name='dob' onChange={(e)=>setDob(e.target.value)} value={dob} className='form-control' />
+                            <span className='errorSpan'>{errorList.dob}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.dob}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Phone Number</label>
                             <input type='text' name='phone' onChange={(e)=>setPhone(e.target.value)} value={phone} className='form-control' />
+                            <span className='errorSpan'>{errorList.phone}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.phone}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Email</label>
                             <input type='text' name='email' onChange={(e)=>setEmail(e.target.value)} value={email} className='form-control' />
+                            <span className='errorSpan'>{errorList.email}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.email}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Upload Picture</label>
                             <input className="from-control" onChange={(e)=>setPic(e.target.files[0])} type="file" name="pic" />
+                            <span className='errorSpan'>{errorList.pic}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.pic}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Nid No</label>
                             <input type='text' name='nid' onChange={(e)=>setNid(e.target.value)} value={nid} className='form-control' />
+                            <span className='errorSpan'>{errorList.nid}</span>
                         </div>
-
-                        <span style={{color:'red'}}>{errorList.nid}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Employee Name</label>
-                            <input type='text' name='ad_name' onChange={(e)=>setEmpname(e.target.value)} value={emp_name} className='form-control' />
+                            <input type='text' name='emp_name' onChange={(e)=>setEmpname(e.target.value)} value={emp_name} className='form-control' />
+                            <span className='errorSpan'>{errorList.emp_name}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.ad_name}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Password</label>
                             <input type='password' name='password' onChange={(e)=>setPassword(e.target.value)} value={password} className='form-control' />
+                            <span className='errorSpan'>{errorList.password}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.password}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Salary</label>
                             <input type='text' name='sal' onChange={(e)=>setSal(e.target.value)} value={sal} className='form-control' />
+                            <span className='errorSpan'>{errorList.sal}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.sal}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Designation</label>
                             <input type='text' name='desig' onChange={(e)=>setDesig(e.target.value)} value={desig} className='form-control' />
+                            <span className='errorSpan'>{errorList.desig}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.desig}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Join Date</label>
                             <input type='date' name='joinDate' onChange={(e)=>setJd(e.target.value)} value={joinDate} className='form-control' />
+                            <span className='errorSpan'>{errorList.joinDate}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.joinDate}</span>
                         <br/>
 
                         <div className='form-group md-3'>
                             <label style={{float:'left'}}>Upload Document</label>
                             <input className="from-control" onChange={(e)=>setDoc(e.target.files[0])} type="file" name="doc" />
+                            <span className='errorSpan'>{errorList.doc}</span>
                         </div>
-                        <span style={{color:'red'}}>{errorList.doc}</span>
                         <br/>
 
 
