@@ -64,7 +64,7 @@ const AccountStatement = () => {
     }
     
     useEffect(() => {
-        document.title = "My Transections";
+        document.title = "E-Statement";
         handleHistorydData();
         //console.log(history);
       }, []);
@@ -108,7 +108,7 @@ const AccountStatement = () => {
                     <button className='btn btn-outline-danger col-sm-12' onClick={pdfGenerate}>Download E-Statement</button>
                     <PDFExport ref = {pdfExportComponent} paperSize = "A2">
                     <div style={{ marginLeft: '50px', marginTop:'100px' }}>
-                    <h1>Castle Internet Bank</h1><br />
+                    <center><h1>Castle Internet Bank</h1></center><br />
                     <h5>Account Holder's Name: {localStorage.getItem('customerName')}</h5>
                     <h6>Download Time: {String(new Date())}</h6>
                     
@@ -125,7 +125,7 @@ const AccountStatement = () => {
                         ))}
                         </tbody>
                     </table>
-                    ---------------------------------------------------------------------End of Statement-----------------------------------------------------------------------
+                    <center>---------------------------------------------------------------------End of Statement---------------------------------------------------------------------</center>
                     </div>
                     </PDFExport>
                 </div>
