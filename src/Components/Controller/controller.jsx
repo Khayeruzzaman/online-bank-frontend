@@ -35,6 +35,9 @@ import AddBeneficiary from '../Account/Beneficiary/addbeneficiary';
 import AllBeneficiaryList from '../Account/Beneficiary/allbeneficiary';
 import SendMoney from '../Account/Beneficiary/sendmoney';
 import ExternalPayment from '../Account/Beneficiary/payment';
+import AccountLoanRequest from '../Account/Loan/request';
+import AccountLoanStatus from '../Account/Loan/status';
+import AccountStatement from '../Account/Statement/statement';
 
 
 //Admin Import
@@ -120,6 +123,21 @@ const HomeController = () => {
                         <AccountNavbar />
                         <AccountSidebar />
                         <ExternalPayment />
+                    </Route>
+                    <Route exact path={"/account/loan/request"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <AccountLoanRequest />
+                    </Route>
+                    <Route exact path={"/account/loan/status"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <AccountLoanStatus />
+                    </Route>
+                    <Route exact path={"/account/e-statement-download"}>
+                        <AccountNavbar />
+                        <AccountSidebar />
+                        <AccountStatement />
                     </Route>
                 <div style={{ 
                     background: 'url("http://127.0.0.1:8000/admin/background_images/back1.jpg") no-repeat center center fixed',

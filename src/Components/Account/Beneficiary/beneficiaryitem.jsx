@@ -51,14 +51,14 @@ const BeneficiaryItem = (props) => {
             <div className={styles.flexItemBen1}>
                 <br />
                 <Link to={['/account/beneficiary/List/send-money', props.name, props.accname].join('/')}>
-                    <div class="btn btn-outline-dark" style={{ width:'200px', marginLeft:'-50px', marginRight:'10px' }}>
-                        <i class="fas fa-paper-plane"></i><strong> Send Money</strong>
+                    <div className="btn btn-outline-dark" style={{ width:'200px', marginLeft:'-50px', marginRight:'10px' }}>
+                        <i className="fas fa-paper-plane"></i><strong> Send Money</strong>
                     </div>
                 </Link>
                 <br />
                 <div onClick={handleDelete}>
-                    <div class="btn btn-outline-dark" onclick="confirmdelete({{ $b->id }})" style={{ width:'200px', marginTop:'5px', marginLeft:'-50px', marginRight:'10px' }}>
-                        <i class="fas fa-trash"></i><strong> Delete Beneficiary</strong>
+                    <div className="btn btn-outline-dark" style={{ width:'200px', marginTop:'5px', marginLeft:'-50px', marginRight:'10px' }}>
+                        <i className="fas fa-trash"></i><strong> Delete Beneficiary</strong>
                     </div>
                 </div>
             </div>
